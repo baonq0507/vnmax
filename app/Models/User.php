@@ -6,8 +6,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -21,6 +23,20 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'bank_name',
+        'bank_account_name',
+        'bank_account_number',
+        'referrer_code',
+        'referrer_id',
+        'level_id',
+        'status',
+        'total_withdrawal',
+        'total_deposit',
+        'role',
+        'avatar',
+        'balance',
+        'balance_locked',
     ];
 
     /**
@@ -44,5 +60,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->role === 'admin';
     }
 }

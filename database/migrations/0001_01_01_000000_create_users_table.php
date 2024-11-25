@@ -14,15 +14,23 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone')->unique();
+            $table->string('email')->unique()->nullable();
+            $table->string('phone')->unique()->nullable();
             $table->string('bank_name')->nullable();
-            $table->string('bank_account')->nullable();
-            $table->string('bank_owner')->nullable();
+            $table->string('bank_account_name')->nullable();
+            $table->string('bank_account_number')->nullable();
             $table->string('referrer_code')->nullable();
             $table->foreignId('referrer_id')->nullable()->constrained('users')->nullable();
+            $table->foreignId('level_id')->nullable()->constrained('levels')->nullable();
+            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->bigInteger('total_withdrawal')->default(0);
+            $table->bigInteger('total_deposit')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['admin', 'user', 'dealer'])->default('user');
+            $table->string('avatar')->nullable();
+            $table->bigInteger('balance')->default(0);
+            $table->bigInteger('balance_locked')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

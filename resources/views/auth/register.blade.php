@@ -478,23 +478,14 @@
                     <div class="login_div">
 
                         <div class="login_wrap_1">
-                            <form id="fregister" method="post" action="./register_form_update.php"
-                                class="register_form" enctype="multipart/form-data">
-
-                                <input type="hidden" name="w" value="" />
-                                <input type="hidden" name="url" value="%2Fbbs%2Fregister_form.php" />
-                                <input type="hidden" name="token" value="3a43d03d88591ad0bce411441f9246f3" />
-
+                            <form id="fregister" method="post" action="{{ route('register') }}" class="register_form"
+                                enctype="multipart/form-data">
                                 <ul>
                                     <li class="reg_input_id">
-
-
                                         <input type="text" class="login_input letter-05 font-14" name="mb_id"
                                             id="reg_mb_id" placeholder="아이디 (ID)" maxLength="20" required
                                             autocomplete="on">
                                         <span id='msg_mb_id'></span>
-
-
                                     </li>
 
                                     <li class="reg_input_nick">

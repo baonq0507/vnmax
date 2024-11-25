@@ -15,4 +15,12 @@ class AuthController extends Controller
     {
         return view('auth.register');
     }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'mb_id' => 'required',
+            'mb_password' => 'required',
+        ]);
+    }
 }

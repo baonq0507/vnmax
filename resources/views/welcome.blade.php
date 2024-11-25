@@ -54,11 +54,6 @@
 <body topmargin="0" leftmargin="0">
     <a name="g4_head"></a>
 
-    <!--
-<link rel="stylesheet" type="text/css" href="./user/css/max587/styleuser.css?20240115452" charset="UTF-8" media="all" />
--->
-
-
     <div id="new_gift_box" style="display:none;">
         <div class="jb-text">
             <p><span data='https://max668.com/status_data_1'
@@ -67,9 +62,6 @@
     </div>
 
     <div id="wrap">
-
-
-
         <header>
 
             <div class="_high">
@@ -82,16 +74,11 @@
                 </div>
             </div>
 
-
             <div class="_mid">
-
                 <div class="_mobile">
-
                     <a onclick="l_showmenu()"><i class="fas fa-bars"></i></a>
                     <a href="/."><img src="{{ asset('imgidt/logo.png') }}" height:150px; /></a>
                     <a onclick="r_showmenu()"><i class="fas fa-user"></i></a>
-
-
                 </div>
 
                 <div class="_bg"></div>
@@ -156,11 +143,11 @@
                     <a onclick="r_hidemenu()" class="_m_menu_top_r">
                         <i class="fas fa-times"></i>
                     </a>
-                    <form id="flogin" method="post" action="#" onsubmit="return flogin_submit(this);">
+                    <form id="flogin" method="post" action="{{ route('login') }}">
                         <input type="hidden" name="url" value="">
                         <nav class="_left" style='list-style:none; padding-top:45px;'>
                             <li style='border-top:5px solid rgba(255,255,255,0.3);'>
-                                <input type="text" class="form-control" name="mb_id" id="login_id" placeholder="ID"
+                                <input type="text" class="form-control" name="" id="login_id" placeholder="ID"
                                     maxLength="20" required autocomplete="off">
                             </li>
                             <li>
@@ -170,7 +157,7 @@
                             <li>
                                 <button type="submit" class="btn btn-primary" name=""><span
                                         style='font-size:13px; font-weight:bold;'>Sign In</span></button>
-                                <button type="submit" class="btn btn-warning" onclick="return fregister_submit()"
+                                <button type="button" class="btn btn-warning" onclick="return fregister_submit()"
                                     name=""><span style='font-size:13px; font-weight:bold;'>Sign Up</span></button>
 
                             </li>
@@ -185,9 +172,6 @@
 
 
             </div>
-
-
-            <!-- ----------------------------------------------------------------------------- -->
 
             <form id="flogin" method="post" action="#">
                 <input type="hidden" name="url" value="">
@@ -205,9 +189,6 @@
                             <button type="submit" class="btn btn-warning w-100" onclick="return fregister_submit()"
                                 name=""><span style='font-size:13px; font-weight:bold;'>Sign Up</span></button>
 
-
-
-
                         </div>
                     </div>
 
@@ -219,19 +200,6 @@
                 <input type=hidden value=1 name=agree2 />
             </form>
 
-
-            <!-- ----------------------------------------------------------------------------- -->
-
-
-            <!--
-	<div class="_bot">
-		<div class="inne clea">
-			<div class="notice_area">
-							<span id="headline_copy_0" class="headline_txt_color_"></span>
-						</div>
-		</div>
-	</div>
-	-->
 
         </header>
 
@@ -282,32 +250,14 @@
                         }
                         location.href = "https://max668.com/bbs/board.php?bo_table=fr_board";
                     }
-                    document.getElementById('flogin').submit = function(e) {
-                        e.preventDefault();
-                        const username = document.getElementById('login_id').value;
-                        const password = document.getElementById('login_pw').value;
-                        if (username == '' || password == '') {
-                            alert('아이디와 비밀번호를 입력해주세요.');
-                            return false;
-                        } <
-                        !--window.location.href = `https://sands7898.vip/?username=${username}&password=${password}`;
-                        -- >
-                    }
 
                     function fregister_submit() {
-                        window.open('/register.html')
+                        window.open('/register')
                     }
                 </script>
 
                 <script type="text/javascript">
-                    /*
-					var gift_sound = new Audio('../proc/sound/배경음악^^박수소리.mp3');
-					setTimeout(function run()
-					{
-						get_new_gift("");
-						timerId = setTimeout(run, 1000 * 10);
-					}, 1000 * 10);
-					*/
+
                 </script>
 
                 <script type="text/javascript">
@@ -534,42 +484,6 @@
                                         </ul>
                                     </div>
                                 </div>
-
-                                <!--
-			<div class="_game_area">
-				<div class="main_best_wrap">
-					<div class="main_best_box">
-
-						<div id="bo_gall">
-
-							<ul id="gall_ul" class="gall_row">
-							<tr height='2' style='background-color:gray;'><td colspan='20'>게임준비중입니다...</td></tr>							</ul>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-			-->
-
-                                <!--
-			<div class="_game_area">
-				<div class="main_best_wrap">
-					<div class="main_best_box">
-						<div class="main_best_title">
-							<span>엠카지노 인기 슬롯</span>
-						</div>
-						<div class="main_best_title_1">
-							<span>엠카지노 인기 슬롯</span>
-						</div>
-						<div id="bo_gall" >
-							<ul id="gall_ul" class="gall_row">
-							<tr height='2' style='background-color:gray;'><td colspan='20'>게임준비중입니다...</td></tr>							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			-->
 
                                 <div class="_game_area">
                                     <div class="main_best_wrap">
@@ -899,102 +813,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <script>
-                        /*
-						$(document).ready(function() {
-							$(".sc-btn").on("mouseover", function() {
-								$(this).siblings(".sc-btn").addClass("off")
-							});
-							$(".sc-btn").on("mouseout", function() {
-								$(".sc-btn").removeClass("off")
-							});
-						});
-						*/
-                        //게임 리스트
-                        function gameplay(mb_id, game_id, open) {
-
-
-                            if (!mb_id) {
-                                alert("로그인 하세요");
-                                return false;
-                            }
-
-                            if (open == 0) {
-                                alert("현재 게임은 점검중 입니다.");
-                                return false;
-                            }
-
-                            if (!confirm('게임을 실행하시겠습니까?')) {
-                                return false;
-                            }
-
-                            $.ajax({
-                                type: "post",
-                                data: {
-                                    mb_id: mb_id,
-                                    game_id: game_id
-                                },
-                                url: './user/ajax/ajax.gamePlayCasino.php',
-                                dataType: "text",
-                                async: false,
-                                success: function(res) {
-                                    if (res == '토큰오류') {
-                                        alert('토큰오류입니다. 고객센터로 문의하세요!');
-                                        location.reload();
-                                    } else if (res == '주소오류') {
-                                        alert('주소오류입니다. 고객센터로 문의하세요!');
-                                        location.reload();
-                                    }
-
-                                    var width = 1500,
-                                        height = 900;
-                                    var leftPosition, topPosition;
-                                    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-                                    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-
-                                    window.open(res, "casino",
-                                        "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" +
-                                        leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" +
-                                        topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no");
-
-                                    //window.open(res, '_blank');
-                                    //window.open(res, "casino", "width="+ w +"px,height="+ h +"px,scrollbars=yes").focus();
-
-
-                                },
-                                timeout: 10000, //10초동안 응답이 없을시
-                                error: function(jqXHR, textStatus, errorThrown) {
-                                    alert(textStatus);
-                                    if (errorThrown == 'timeout') {
-                                        $('#error_meg').show().find('p').html('요청 시간을 초과하였습니다.');
-                                    } else if (jqXHR.status == 404) {
-                                        $('#error_meg').show().find('p').html('요청하신 페이지를 찾을수 없습니다.');
-                                    } else if (jqXHR.status == 500) {
-                                        $('#error_meg').show().find('p').html('HTTP 500 내부서버오류 입니다.');
-                                    } else if (jqXHR.status === 0) {
-                                        $('#error_meg').show().find('p').html('인터넷 연결 상태를 확인해 주세요.');
-                                    } else {
-                                        $('#error_meg').show().find('p').html('일시적인장애로 결과를 가져올 수 없습니다.');
-                                    }
-                                }
-                            });
-                        }
-                        //게임오픈
-                        function gameopen(mb_id, provider_id, open) {
-                            <
-                            !--window.open('https://max668.com/user/gameOpenSlot.php?mb_id=' + mb_id + '&provider_id=' + provider_id, "slot", "width=" + w + "px,height=" + h + "px,scrollbars=yes").focus();
-                            -- >
-
-                            var w = 1480,
-                                h = 900;
-
-                            window.open('https://sands7898.vip/', '_blank', 'width=' + w + 'px,height=' + h + 'px,scrollbars=yes').focus();
-                        }
-                    </script>
-
-
-
                 </div>
         </section>
 
@@ -1022,32 +840,6 @@
 
 
     </div><!-- #wrap -->
-
-
-
-    <!--
-<div style="position: fixed; right: 12px; bottom: 0px;z-index:9999">
-	<a href="./chat.php" onclick="window.open(this.href, '_blank', 'width=1000,height=620,toolbars=no,scrollbars=no'); return false;" style="margin-bottom:10px">
-	<img src="/img/chat.png" alt="채팅문의" style="float:right; width:33%">
-	</a>
-	<br>
-</div>
--->
-
-    <!-- Start of LiveChat (www.livechat.com) code -->
-
-    <!-- 보류
-<script>
-    window.__lc = window.__lc || {};
-    window.__lc.license = 17944314;
-    window.__lc.integration_name = "manual_onboarding";
-    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
-</script>
--->
-
-
-    <!-- End of LiveChat code -->
-
 
 
     <div id="dialog-confirm">
@@ -1106,6 +898,10 @@
             // Add a leading zero to the hours value
             $("#clock_hours").html((hours < 10 ? "0" : "") + hours);
         }, 1000);
+
+        function flogin_submit(e) {
+
+        }
     </script>
 
 
