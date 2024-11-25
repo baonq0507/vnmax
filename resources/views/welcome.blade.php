@@ -138,17 +138,18 @@
                     </nav>
                 </div>
 
-
+                @if (!auth()->check())
                 <div class="m_menu_r">
                     <a onclick="r_hidemenu()" class="_m_menu_top_r">
                         <i class="fas fa-times"></i>
                     </a>
                     <form id="flogin" method="post" action="{{ route('login') }}">
-                        <input type="hidden" name="url" value="">
+                        @csrf
                         <nav class="_left" style='list-style:none; padding-top:45px;'>
                             <li style='border-top:5px solid rgba(255,255,255,0.3);'>
                                 <input type="text" class="form-control" name="" id="login_id" placeholder="ID"
                                     maxLength="20" required autocomplete="off">
+                                <span id='msg_mb_id' style="color: red;">2323</span>
                             </li>
                             <li>
                                 <input type="password" class="form-control" name="mb_password" id="login_pw"
@@ -163,44 +164,49 @@
                             </li>
                         </nav>
                     </form>
-                    <form name="fregister" id="fregister" method="POST" autocomplete="off">
-                        <input type=hidden value=1 name=agree />
-                        <input type=hidden value=1 name=agree2 />
-                    </form>
-
                 </div>
+                @endif
 
 
             </div>
 
-            <form id="flogin" method="post" action="#">
+            @if (!auth()->check())
+            <form id="flogin" method="post" action="{{ route('login') }}">
+                @csrf
                 <input type="hidden" name="url" value="">
 
                 <div class="_top">
                     <div class="inne clea">
                         <div class="_left"></div>
                         <div class="_right">
-                            <input type="text" class="form-control" name="mb_id" id="login_id" placeholder="ID"
-                                maxLength="20" required autocomplete="off">
-                            <input type="password" class="form-control" name="mb_password" id="login_pw"
-                                placeholder="PW" maxLength="20" required autocomplete="on">
-                            <button type="submit" class="btn btn-primary w-100" name=""><span
-                                    style='font-size:13px; font-weight:bold;'>Sign In</span></button>&nbsp;
-                            <button type="submit" class="btn btn-warning w-100" onclick="return fregister_submit()"
-                                name=""><span style='font-size:13px; font-weight:bold;'>Sign Up</span></button>
+                            <div>
 
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" name="name" id="login_id" placeholder="ID"
+                                    maxLength="20" required autocomplete="off" value="{{ old('name') }}">
+                                @error('name')
+                                <span id='msg_mb_id' style="color: red;">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div>
+                                <input type="password" class="form-control" name="password" id="login_pw"
+                                    placeholder="PW" maxLength="20" required autocomplete="on">
+                            @error('password')
+                                <span id='msg_mb_password' style="color: red;">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary w-100" name=""><span
+                                        style='font-size:13px; font-weight:bold;'>Sign In</span></button>&nbsp;
+                                <button type="button" class="btn btn-warning w-100" onclick="return fregister_submit()"
+                                    name=""><span style='font-size:13px; font-weight:bold;'>Sign Up</span></button>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
             </form>
-            <form name="fregister" id="fregister" method="POST" autocomplete="off">
-                <input type=hidden value=1 name=agree />
-                <input type=hidden value=1 name=agree2 />
-            </form>
-
-
+            @endif
         </header>
 
         <div class="clear"></div>
@@ -252,7 +258,7 @@
                     }
 
                     function fregister_submit() {
-                        window.open('/register')
+                        window.open("{{ route('register') }}");
                     }
                 </script>
 
