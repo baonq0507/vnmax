@@ -37,17 +37,16 @@
 </script>
 
 
-<link rel="stylesheet" href="https://max668.com/user/css/max587/common.css?v=20240115452" type="text/css">
+<link rel="stylesheet" href="{{ asset('user/css/max587/common.css') }}" type="text/css">
 
-<link rel="stylesheet" href="https://max668.com/user/css/max587/styleuser.css?v=20240115452" type="text/css">
+<link rel="stylesheet" href="{{ asset('user/css/max587/styleuser.css') }}" type="text/css">
 
-<script src="https://max668.com/user/js/jquery-1.8.3.min.js?v=20240115452"></script>
-<script src="https://max668.com/user/js/jquery-ui-1.9.2.custom.min.js?v=20240115452"></script>
-<link rel="stylesheet" href="https://max668.com/user/css/max587/jquery-ui-1.9.2.custom.min.css?v=20240115452"
-    type="text/css">
-<script src="https://max668.com/js/jquery.menu.js?v=20240115452"></script>
-<script type="text/javascript" src="https://max668.com/js/common.js?v=20240115452"></script>
-<script type="text/javascript" src="https://max668.com/user/js/t_user_common.js?v=20240115452"></script>
+<script src="{{ asset('user/js/jquery-1.8.3.min.js') }}"></script>
+<script src="{{ asset('user/js/jquery-ui-1.9.2.custom.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('user/css/max587/jquery-ui-1.9.2.custom.min.css') }}" type="text/css">
+<script src="{{ asset('user/js/jquery.menu.js') }}"></script>
+<script type="text/javascript" src="{{ asset('user/js/common.js') }}"></script>
+<script type="text/javascript" src="{{ asset('user/js/t_user_common.js') }}"></script>
 <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css?v=20240115452" />
 
